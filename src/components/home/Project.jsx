@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper'
 
 export default function Project({project}) {
   const { name, repo, link, description, image } = project;
+
+  
   return (
     <Paper elevation={10} sx={{ maxWidth: 345, margin: '16px auto' }}>
     <Card sx={{ maxWidth: 345 }}>
@@ -19,10 +21,10 @@ export default function Project({project}) {
         title={name}
       />
       <CardContent>
-        <Typography gutterBottom sx={{textAlign:"center"}}variant="h5" component="div">
+        <Typography gutterBottom sx={{textAlign:"center"}} variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign:"center" }}>
+        <Typography variant="body" sx={{ color: 'text.secondary', textAlign:"center" }}>
           {description}
         </Typography>
       </CardContent>

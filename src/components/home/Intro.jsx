@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 
 
 const Intro = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const [isVisible, setIsVisible] = useState(false);
   const textRef = useRef(null);
 
   useEffect(() => {
@@ -12,7 +12,6 @@ const Intro = () => {
         const isInView = top < window.innerHeight && bottom >= 0;
         if (isInView) {
           setIsVisible(true);
-          // Stop observing once text is visible
           observer.disconnect();
         }
       }
@@ -33,7 +32,6 @@ const Intro = () => {
       observer.observe(textRef.current);
     }
 
-    // Adding scroll event listener as fallback
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -44,32 +42,43 @@ const Intro = () => {
 
   useEffect(() => {
     if (isVisible && textRef.current) {
-      const textContent = textRef.current.innerText;
+      const textContent = textRef.current.innerText.split(' '); // Split by words
       let newHtml = '';
-      const animationDelay = 15; // alter this to speed it up
+      const animationDelay = 2; // Adjust delay
 
-      textContent.split('').map((char, index) => {
-        newHtml += `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`;
-
-      })
+      textContent.forEach((word, wordIndex) => {
+        newHtml += '<span class="word">';
+        word.split('').forEach((char, charIndex) => {
+          newHtml += `<span class="char" style="animation-delay:${animationDelay * (wordIndex * word.length + charIndex)}ms">${char}</span>`;
+        });
+        newHtml += '</span>&nbsp;'; // Add space after each word
+      });
 
       textRef.current.innerHTML = newHtml;
 
-      const children = textRef.current.children;
-  
-      Array.from(children).map((child, index) => {
-        child.style.animationDelay = `${animationDelay * index}ms`;
+      // Prevent word breaks
+      const allChars = textRef.current.querySelectorAll('.char');
+      const allWords = textRef.current.querySelectorAll('.word');
+
+      allWords.forEach(word => {
+        // Temporarily set word to nowrap to check for word break
+        word.style.whiteSpace = 'nowrap';
+        const initialWidth = word.getBoundingClientRect().width;
+        word.style.whiteSpace = '';
+
+        // If word's width changes (i.e., breaks), apply nowrap
+        if (word.getBoundingClientRect().width !== initialWidth) {
+          word.style.whiteSpace = 'nowrap';
+        }
       });
-  
-      
     }
   }, [isVisible]);
 
   return (
     <div className="center">
-      <p
+      <p 
         ref={textRef}
-        className={`text-draw ${isVisible ? 'reveal' : 'hidden'}`}
+        className={`intro-p text-draw ${isVisible ? 'reveal' : 'hidden'}`}
       >
         Hey! I'm Adam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea, adipisci ab porro.
       </p>
