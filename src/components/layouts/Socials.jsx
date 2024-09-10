@@ -29,7 +29,7 @@ const socialIcons = [
   export default function Socials({styles, placement, color, background, isMobile}) {
    
     return (
-      <Box className={isMobile === undefined ? "" : "slide-left"} style={styles} sx={{ marginLeft: "25px"}}>
+      <Box className={isMobile === undefined ? "" : "slide-left"} style={styles} sx={{ marginLeft: "20px"}}>
         {socialIcons.map(({ icon, label, href }, index) => (
           <StyledTooltip 
             key={index} 
@@ -38,7 +38,7 @@ const socialIcons = [
             arrow 
             >
             <Fab 
-            color={color} 
+            color={"black"} 
             aria-label={label} 
             href={href}
             target='_blank' rel="noreferrer"
@@ -46,7 +46,10 @@ const socialIcons = [
               marginTop: '15px',
               background: {background}, 
               boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)'
-            }}>
+            }}
+              className="metallic-button"
+            >
+            
               {icon}
             </Fab>
           </StyledTooltip>

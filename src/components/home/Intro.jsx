@@ -44,7 +44,7 @@ const [isVisible, setIsVisible] = useState(false);
     if (isVisible && textRef.current) {
       const textContent = textRef.current.innerText.split(' '); // Split by words
       let newHtml = '';
-      const animationDelay = 2; // Adjust delay
+      const animationDelay = 4; // Adjust delay
 
       textContent.forEach((word, wordIndex) => {
         newHtml += '<span class="word">';
@@ -57,7 +57,6 @@ const [isVisible, setIsVisible] = useState(false);
       textRef.current.innerHTML = newHtml;
 
       // Prevent word breaks
-      const allChars = textRef.current.querySelectorAll('.char');
       const allWords = textRef.current.querySelectorAll('.word');
 
       allWords.forEach(word => {

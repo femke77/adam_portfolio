@@ -29,6 +29,7 @@ export default function Welcome() {
   }, [hasAnimated, disableAnimation]);
 
   return (
+    <div className="welcome">
     <div className={hasAnimated ? "title" : "animated-title"}>
       <div className="text-top">
         <div>
@@ -39,6 +40,7 @@ export default function Welcome() {
       <div className="text-bottom">
         <div>Web Developer</div>
       </div>
+    </div>
     </div>
   );
 }
