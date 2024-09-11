@@ -5,12 +5,70 @@ li {
 img {
   border-style: none;
 }
+html, body {
+background: #1F1E2E;
 
+}
 main{
-  margin-top: 50px;
-  background-color: black;
-  margin-top: 0;
+  margin-top: 0px;
+height: 110vh;
+ background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%);
+ /* background: rgb(2,0,36); */
+ /* background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 43%, rgba(0,0,0,1) 100%); */
   color: white
 }
 
 
+/* .welcome {
+  padding:20px;
+  background: rgb(2,0,36);
+  background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%);
+} */
+
+
+.metallic-button {
+  --shine-deg: 45deg;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.875rem;
+  padding: 4rem 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  height: 180px;
+  background: linear-gradient(to bottom, #f4f0f0, #f2ecf4, rgb(123, 123, 128));
+
+}
+
+.metallic-button:after {
+  content: "";
+  top: 0;
+  transform: translateX(100%) rotate(var(--shine-deg));
+  width: 300%;
+  height: 300%;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(
+    30deg,
+    transparent 20%,
+    transparent 40%,
+    rgb(255, 255, 255, 0.4) 50%,
+    rgb(255, 255, 255, 0.4) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  transition: transform 2s ease-in;
+  transform: translateX(100%) rotate(var(--shine-deg));
+}
+
+.metallic-button:hover:after {
+  animation: shine 1s infinite ease-in;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(100%) rotate(var(--shine-deg));
+  }
+  100% {
+    transform: translateX(-100%) rotate(var(--shine-deg));
+  }
+}

@@ -12,7 +12,7 @@ function App() {
     <>
       <CssBaseline />
       <AnimationProvider>
-        <main>
+        <main >
           <Layout>
             <Outlet />
           </Layout>

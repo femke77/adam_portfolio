@@ -23,6 +23,7 @@ const styles = {
     position: "fixed",
     left: "10px",
     bottom: "15px",
+    color: "black",
   },
   container: {
     display: "flex",
@@ -256,11 +257,13 @@ export default function Nav() {
         // Desktop Nav //
         <nav id="navigation" className="slide-right">
           <Avatar
-            src="../../assets/projects/IMG_0698.jpg"
+      
+            color="black"
             alt="profile pic"
             name="Adam Mathis"
             size="80"
             style={{ padding: "10px", position: "fixed", top: "5" }}
+           
             round={true}
           />
           <ul
@@ -368,7 +371,7 @@ export default function Nav() {
             )}
           </ul>
           <ScrollLink to="intro" spy={true} offset={-75} duration={500}>
-            <Fab color="secondary" aria-label="up" style={styles.up}>
+            <Fab color="secondary" className="metallic-button" aria-label="up" style={styles.up}>
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollLink>
