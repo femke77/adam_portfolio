@@ -8,6 +8,7 @@ import Welcome from "../components/home/Welcome";
 import Box from "@mui/material/Box";
 import ScrollingText from "../components/home/ScrollingText";
 import '../components/home/Intro.css'; // Import CSS file for styles
+import CardStacking from "../components/home/CardStacking";
 
 // TODO Parallax effects on this page
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Intro />
       <About />
       <ScrollingText />
+      <CardStacking />
       <Portfolio />
       <Skills />
       <Footer />

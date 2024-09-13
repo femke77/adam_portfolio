@@ -34,15 +34,15 @@
 }
 
 .animated-title>div, .title>div {
-  height: 35vmin; /* combination of this plus span height in div div span below*/
+  height: 36vmin; /* combination of this plus span height in div div span below*/
   overflow: hidden;
 
   width: 100%;
 }
 
 .animated-title>div div , .title>div div {
-  font-size: 13vmin;
-  padding: 2vmin 0;
+  font-size: 14vmin;
+  padding: 1.5vmin 0;
 
 }
 

@@ -29,10 +29,11 @@ export default function ScrollAnimation() {
   return (
     <Box
       style={{
-        height: "200vh",
+        height: "40vh",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
+        
       }}
     >
       <Box
@@ -43,17 +44,22 @@ export default function ScrollAnimation() {
             xs: "80px",
             sm: "100px",
             md: "160px",
-            lg: "200px",
+            lg: "240px",
             xl: "240px",
           },
           transition: "transform 0.2s linear",
+      paddingRight: "100px  ",
+        letterSpacing: "0.5px",
         }}
       >
-        <span style={{ color: "blue" }}>P</span>ORK
+        {/* <span style={{ color: "blue" }}>P</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
-        <span style={{ color: "blue" }}>W</span>ORK
+        <span style={{ color: "blue" }}>W</span>ORK */}
+
+        {/* Alternate: */}
+        WORK<span style={{ color: "blue" }}>WORK</span>WORK<span style={{ color: "blue" }}>WORK</span>WORKWORKWORK
       </Box>
     </Box>
   );
