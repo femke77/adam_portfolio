@@ -5,24 +5,20 @@ li {
 img {
   border-style: none;
 }
-html, body {
-background: #1F1E2E;
+
+html,
+body, main {
+  background: #1F1E2E;
 
 }
-main{
+
+main {
   margin-top: 0px;
-/* height: 110vh; */
- /* background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%); */
- background: rgb(2,0,36);
+  /* uncomment next two lines for gradient effect on welcome main only.  */
+  /* height: 110vh; */
+  /* background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%); */
   color: white
 }
-
-
-/* .welcome {
-  padding:20px;
-  background: rgb(2,0,36);
-  background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%);
-} */
 
 
 .metallic-button {
@@ -46,15 +42,13 @@ main{
   height: 300%;
   position: absolute;
   z-index: 1;
-  background: linear-gradient(
-    30deg,
-    transparent 20%,
-    transparent 40%,
-    rgb(255, 255, 255, 0.4) 50%,
-    rgb(255, 255, 255, 0.4) 55%,
-    transparent 70%,
-    transparent 100%
-  );
+  background: linear-gradient(30deg,
+      transparent 20%,
+      transparent 40%,
+      rgb(255, 255, 255, 0.4) 50%,
+      rgb(255, 255, 255, 0.4) 55%,
+      transparent 70%,
+      transparent 100%);
   transition: transform 2s ease-in;
   transform: translateX(100%) rotate(var(--shine-deg));
 }
@@ -67,6 +61,7 @@ main{
   0% {
     transform: translateX(100%) rotate(var(--shine-deg));
   }
+
   100% {
     transform: translateX(-100%) rotate(var(--shine-deg));
   }

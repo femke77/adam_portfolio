@@ -29,7 +29,7 @@ export default function Welcome() {
   }, [hasAnimated, disableAnimation]);
 
   return (
-    <div className="welcome">
+    <div className="welcome" style={{padding: "2rem"}}>
     <div className={hasAnimated ? "title" : "animated-title"}>
       <div className="text-top">
         <div>

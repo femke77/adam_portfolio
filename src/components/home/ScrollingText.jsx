@@ -43,13 +43,13 @@ export default function ScrollAnimation() {
             xs: "80px",
             sm: "100px",
             md: "160px",
-            lg: "180px",
+            lg: "200px",
             xl: "240px",
           },
           transition: "transform 0.2s linear",
         }}
       >
-        <span style={{ color: "blue" }}>W</span>ORK
+        <span style={{ color: "blue" }}>P</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
