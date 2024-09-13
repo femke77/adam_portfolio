@@ -25,7 +25,7 @@
   }
 }
 
-.animated-title {
+.animated-title, .title {
   color: #ffffff;
   font-family: Roboto, Arial, sans-serif;
   height: 80vmin;
@@ -33,27 +33,27 @@
 
 }
 
-.animated-title>div {
+.animated-title>div, .title>div {
   height: 35vmin; /* combination of this plus span height in div div span below*/
   overflow: hidden;
 
   width: 100%;
 }
 
-.animated-title>div div {
-  font-size: 12vmin;
+.animated-title>div div , .title>div div {
+  font-size: 13vmin;
   padding: 2vmin 0;
 
 }
 
-.animated-title>div div span {
+.animated-title>div div span, .title>div div span {
   display: block;
   height: 15vmin;  /* combination of this plust height in .animated-title>div  above change  */
   
 
 }
 
-.animated-title>div.text-top {
+.animated-title>div.text-top, .title>div.text-top {
   border-bottom: 1vmin solid #f0e8e8;
  
 }
@@ -66,11 +66,9 @@
   transform: translate(0, 100%);
 }
 
-.animated-title>div.text-top div span:first-child {
+.animated-title>div.text-top div span:first-child, .title>div.text-top div span:first-child {
   color: #a79f9f;
 }
-
-
 
 
 .animated-title>div.text-bottom div {
@@ -79,50 +77,7 @@
   animation-fill-mode: forwards;
   transform: translate(0, -100%);
   
-  
-}
-
-.title {
-  color: #ffffff;
-  font-family: Roboto, Arial, sans-serif;
-  height: 80vmin;
-  margin-top: 20vmin;
 
 }
 
-.title>div {
-  height: 35vmin; /* combination of this plus span height in div div span below*/
-  overflow: hidden;
-
-  width: 100%;
-}
-
-.title>div div {
-  font-size: 12vmin;
-  padding: 2vmin 0;
-
-}
-
-.title>div div span {
-  display: block;
-  height: 15vmin;  /* combination of this plust height in .animated-title>div  above change  */
-  
-
-}
-
-.title>div.text-top {
-  border-bottom: 1vmin solid #f0e8e8;
- 
-}
-
-.title>div.text-top div {
-
-
-  bottom: 0;
-
-}
-
-.title>div.text-top div span:first-child {
-  color: #a79f9f;
-}
 
