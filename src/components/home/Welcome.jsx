@@ -8,15 +8,15 @@ import { useAnimationContext } from "../../utils/AnimationContext";
 export default function Welcome() {
   const { hasAnimated, disableAnimation } = useAnimationContext();
 
-  const scroller = Scroll.scroller;
+  // const scroller = Scroll.scroller;
 
-  const scroll = (selector) => {
-    scroller.scrollTo(selector, {
-      duration: 1500,
-      offset: -75,
-      spy: true,
-    });
-  };
+  // const scroll = (selector) => {
+  //   scroller.scrollTo(selector, {
+  //     duration: 1500,
+  //     offset: -75,
+  //     spy: true,
+  //   });
+  // };
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,7 +29,7 @@ export default function Welcome() {
   }, [hasAnimated, disableAnimation]);
 
   return (
-    <div className="welcome">
+    <div className="welcome" style={{padding: "2rem"}}>
     <div className={hasAnimated ? "title" : "animated-title"}>
       <div className="text-top">
         <div>
