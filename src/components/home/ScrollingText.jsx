@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 
-function ScrollAnimation() {
+export default function ScrollAnimation() {
   const textRef = useRef(null);
 
   const animate = (element, position) => {
@@ -28,7 +28,7 @@ function ScrollAnimation() {
 
   return (
     <Box
-      sx={{
+      style={{
         height: "200vh",
         whiteSpace: "nowrap",
         width: "100%",

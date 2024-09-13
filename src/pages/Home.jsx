@@ -8,6 +8,7 @@ import Welcome from "../components/home/Welcome";
 import Box from "@mui/material/Box";
 import ScrollingText from "../components/home/ScrollingText";
 import '../components/home/Intro.css'; // Import CSS file for styles
+
 // TODO Parallax effects on this page
 
 export default function Home() {
