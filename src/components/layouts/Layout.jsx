@@ -1,3 +1,4 @@
+import React from "react";
 import Grid from "@mui/material/Grid"
 import Nav from "./Nav"
 import Socials from "./Socials"
@@ -5,7 +6,13 @@ import { useMediaQuery } from '@mui/material';
 import "./Layout.css"
 import "../../pages/Contact.css"
 import { useLocation } from "react-router-dom";
+
+// Lifted state as alternative to context??? 
+
 export default function Layout({bgStyles, children}) {
+
+    //const [animated, setAnimated] = React.useState(false);  // lifted state for animation ??? 
+
     
     const path = useLocation().pathname;
     const location = path.split("/")[1];
@@ -28,7 +35,7 @@ export default function Layout({bgStyles, children}) {
                 <Nav />
             </Grid>
             <Grid item={true} sx={{ padding: "20px"}} xs={10.5} sm={10} md={10} lg={9}>
-                {children}
+               {children}   {/* lifted state would have to send props to children */}
             </Grid>
             <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={0} sm={0.5} md={1} lg={1.5}>
                 {!isMobile ? (<Socials styles={styles.socials} placement={'right' } color={'secondary'} background={'transparent'} isMobile={isMobile} />) : ("")}
