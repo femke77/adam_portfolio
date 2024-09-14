@@ -57,7 +57,7 @@ const ProcessAnimation = () => {
   }, []);
 
   return (
-    <section className="box">
+    <section id="projects" className="box">
       <div ref={containerRef}>
         <ScrollingText />
         <div className="">

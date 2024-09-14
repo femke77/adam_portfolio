@@ -42,9 +42,8 @@ export default function ScrollAnimation() {
         sx={{
           fontSize: {
             xs: "80px",
-            sm: "190px",
-            md: "190px",
-            lg: "190px",
+            sm: "199px",
+          
            
           },
           transition: "transform 0.2s linear",
