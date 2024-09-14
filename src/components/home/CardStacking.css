@@ -1,0 +1,88 @@
+.py-4 {
+    padding-block: 4px !important;
+}
+
+
+.px-12 {
+    padding-inline: 12px !important;
+}
+
+.yellow-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.black-gradient {
+    background: linear-gradient(180deg, #151515 0%, #1c1c1c 100%);
+}
+
+.process-item-wrapper,
+.process-item-wrapper-last {
+    /* margin-top: 90px; */
+   
+    height: 70vh;
+    border: .5px solid white;
+    border-radius: 10px;
+    padding-block: 7rem;
+    margin-right: 3px;
+
+}
+.process-item-wrapper{
+    width: 50vh;
+    
+}
+.process-item-wrapper-last {
+    width: 150vh;
+    background-color: white;
+    color: black;
+    margin-left: 3px;
+
+}
+
+.label-wrapper>span {
+    padding-block: 4px;
+}
+
+
+
+.number-item {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+}
+
+
+
+.ps-64 {
+    padding-left: 64px;
+}
+
+
+.pin-process>.inner-div {
+    overflow-x: hidden;
+    width: 400%;
+    /*items * 100% */
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    ;
+}
+
+
+/*for the animation - END */
+
+/* Desire final positions - START */
+/* .inner-div .process-item-wrapper:nth-child(2) {
+    translate: calc(-100% + 64px) 0!important;
+  }
+  
+  .inner-div .process-item-wrapper:nth-child(3) {
+    translate: -190% 0;
+  }
+  
+  .inner-div .process-item-wrapper:nth-child(4) {
+    translate: -285% 0;
+  } */
+/* Desire final positions - END */

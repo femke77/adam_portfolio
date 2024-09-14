@@ -1,7 +1,7 @@
 
 export default function About() {
   return (
-    <div id = "about" style={{padding: "2rem"}}>
+    <div id = "about" style={{paddingLeft: "2rem", paddingRight: "3rem"}}>
 
       <h1>About Page</h1>
       <p>
