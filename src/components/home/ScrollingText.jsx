@@ -29,11 +29,13 @@ export default function ScrollAnimation() {
   return (
     <Box
       style={{
-        height: "40vh",
+        paddingTop: "2.5rem",
+           marginBottom: "0.5rem",
+        height: "27vh",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
-        padding: "4rem"
+       
       }}
     >
       <Box
@@ -42,10 +44,10 @@ export default function ScrollAnimation() {
           // alter these as you wish
           fontSize: {
             xs: "80px",
-            sm: "220px",
-            md: "220px",
-            lg: "240px",
-            xl: "240px",
+            sm: "180px",
+            md: "180px",
+            lg: "220px",
+            xl: "220px",
           },
           transition: "transform 0.2s linear",
           paddingRight: "100px",

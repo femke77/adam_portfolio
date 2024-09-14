@@ -8,8 +8,8 @@
 }
 
 .yellow-circle {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: blue;
 }
@@ -22,7 +22,7 @@
 .process-item-wrapper-last {
     /* margin-top: 90px; */
    
-    height: 68vh;
+    height: 70vh;
     border: .5px solid white;
     border-radius: 10px;
     padding-block: 7rem;
@@ -31,6 +31,7 @@
 }
 .process-item-wrapper{
     width: 50vh;
+    
 }
 .process-item-wrapper-last {
     width: 150vh;
@@ -66,6 +67,7 @@
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
+    ;
 }
 
 
