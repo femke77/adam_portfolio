@@ -29,7 +29,7 @@ export default function ScrollAnimation() {
   return (
     <Box
       style={{
-        paddingTop: "2.5rem",
+        paddingTop: "3rem",
         // marginBottom: "0.5rem",
         // height: "40vh",
         whiteSpace: "nowrap",

@@ -31,7 +31,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div>
+    <div style={{marginTop: "120px"}}>
       <h1>Skills and Technologies</h1>
     <Box id="skills" p={2}>
       <Grid container spacing={3}>
