@@ -1,6 +1,7 @@
 import "./CardStacking.css";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, index }) {
+    let i = 1;
   return (
    <>
     <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
@@ -25,7 +26,7 @@ export default function ProjectCard({ project }) {
     </div>
 
     <div className="number-item black-gradient d-flex justify-content-center align-items-center position-absolute bottom-0">
-      <span className="fw-medium">01 </span>
+      <span className="fw-medium">{index} </span>
     </div>
 </>
 );

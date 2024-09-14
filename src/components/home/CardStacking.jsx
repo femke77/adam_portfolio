@@ -69,7 +69,7 @@ const ProcessAnimation = () => {
                   className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
                   key={project.name}
                 >
-                  <ProjectCard project={project} />
+                  <ProjectCard project={project} index={index+1} />
                 </div>
               ))}
 
