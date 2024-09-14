@@ -20,7 +20,7 @@ export default function Home() {
       <About />
       {/* <ScrollingText /> */}
       <CardStacking />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Skills />
       <Footer />
     </Box>

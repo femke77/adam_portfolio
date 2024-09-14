@@ -30,8 +30,8 @@ export default function ScrollAnimation() {
     <Box
       style={{
         paddingTop: "2.5rem",
-        marginBottom: "0.5rem",
-        height: "27vh",
+        // marginBottom: "0.5rem",
+        // height: "40vh",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
@@ -42,10 +42,10 @@ export default function ScrollAnimation() {
         sx={{
           fontSize: {
             xs: "80px",
-            sm: "180px",
-            md: "180px",
-            lg: "220px",
-            xl: "220px",
+            sm: "190px",
+            md: "190px",
+            lg: "190px",
+           
           },
           transition: "transform 0.2s linear",
           paddingRight: "100px",
@@ -59,7 +59,7 @@ export default function ScrollAnimation() {
         <span style={{ color: "blue" }}>W</span>ORK */}
 
         {/* Alternate: */}
-        
+
         WORK<span style={{ color: "blue" }}>WORK</span>WORK
         <span style={{ color: "blue" }}>WORK</span>WORKWORKWORK
       </Box>

@@ -8,22 +8,18 @@ export default function ProjectCard({ project }) {
         <span className="d-flex gap-10 align-items-center justify-content-center py-4 px-12">
           <div className="yellow-circle"></div>
           <span className="fs-14 fs-xl-20 text-extra-gray lh-1">
-            Step 1
+            {project.name}
           </span>
         </span>
       </div>
 
       <h4 className="fs-20 fs-xl-36 text-gradient-white lh-110p letter-spacing pb-12">
-        Understand your business &amp; scaling potential{" "}
         {project.name}
       </h4>
 
       <div className="fs-16 fs-xl-18 text-extra-gray lh-normal">
         <p>
-          We establish the foundation for success. Aligning activity
-          with the business data helps us ensure we achieve the most
-          important goal; Growing in a sustainable &amp; profitable
-          rate.
+          {project.description}
         </p>
       </div>
     </div>
