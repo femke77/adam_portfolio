@@ -30,18 +30,16 @@ export default function ScrollAnimation() {
     <Box
       style={{
         paddingTop: "2.5rem",
-           marginBottom: "0.5rem",
+        marginBottom: "0.5rem",
         height: "27vh",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
-       
       }}
     >
       <Box
         ref={textRef}
         sx={{
-          // alter these as you wish
           fontSize: {
             xs: "80px",
             sm: "180px",
@@ -59,7 +57,9 @@ export default function ScrollAnimation() {
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK */}
+
         {/* Alternate: */}
+        
         WORK<span style={{ color: "blue" }}>WORK</span>WORK
         <span style={{ color: "blue" }}>WORK</span>WORKWORKWORK
       </Box>
