@@ -15,8 +15,11 @@ import { useMediaQuery } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Avatar from "react-avatar";
 import Socials from "./Socials";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 // TODO refactor this page to reduce repeated code
+gsap.registerPlugin(ScrollTrigger);
 
 const styles = {
   up: {
@@ -46,15 +49,23 @@ export default function Nav() {
   const scroller = Scroll.scroller;
 
   const goToPageAndScroll = async (selector) => {
+    const scrollTriggers = ScrollTrigger.getAll();
+    scrollTriggers.forEach((trigger) => {
+      trigger.kill(); // Temporarily kill any GSAP scroll animations
+    });
 
     await navigate("/");
- 
-    await scroller.scrollTo(selector, {
-      duration: 5,
-    
-      offset: -75,
-      spy: true,
-    });
+    setTimeout(() => {
+      scroller.scrollTo(selector, {
+        duration: 5,
+
+        offset: -75,
+        spy: true,
+      });
+      setTimeout(() => {
+        ScrollTrigger.refresh(); // Refresh ScrollTrigger to recalculate the scroll positions
+      }, 1200);
+    }, 100);
   };
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -66,7 +77,10 @@ export default function Nav() {
         <>
           {location !== "Contact" ? (
             <div>
-              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
+              <Button
+                sx={{ paddingTop: "25px" }}
+                onClick={() => setOpenDrawer(true)}
+              >
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -169,7 +183,10 @@ export default function Nav() {
             </div>
           ) : (
             <div>
-              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
+              <Button
+                sx={{ paddingTop: "25px" }}
+                onClick={() => setOpenDrawer(true)}
+              >
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -210,7 +227,9 @@ export default function Nav() {
                     {" "}
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("intro") && setOpenDrawer(false)}
+                      onClick={() =>
+                        goToPageAndScroll("intro") && setOpenDrawer(false)
+                      }
                     >
                       Home
                     </Button>
@@ -218,7 +237,9 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("about") && setOpenDrawer(false)}
+                      onClick={() =>
+                        goToPageAndScroll("about") && setOpenDrawer(false)
+                      }
                     >
                       About
                     </Button>
@@ -226,7 +247,9 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("projects") && setOpenDrawer(false)} 
+                      onClick={() =>
+                        goToPageAndScroll("projects") && setOpenDrawer(false)
+                      }
                     >
                       Projects
                     </Button>
@@ -254,17 +277,14 @@ export default function Nav() {
           )}
         </>
       ) : (
-        
         // Desktop Nav //
         <nav id="navigation" className="slide-right">
           <Avatar
-      
             color="black"
             alt="profile pic"
             name="Adam Mathis"
             size="80"
             style={{ padding: "10px", position: "fixed", top: "5" }}
-           
             round={true}
           />
           <ul
@@ -293,13 +313,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button sx={{ color: "white" }}>
-                    <ScrollLink
-                      to="projects"
-                      spy={true}
-       
-                    
-                      duration={500}
-                    >
+                    <ScrollLink to="projects" spy={true} duration={500}>
                       Projects
                     </ScrollLink>
                   </Button>
@@ -309,7 +323,6 @@ export default function Nav() {
                     <ScrollLink
                       to="about"
                       spy={true}
-         
                       offset={-75}
                       duration={500}
                     >
@@ -322,7 +335,6 @@ export default function Nav() {
                     <ScrollLink
                       to="intro"
                       spy={true}
-          
                       offset={-75}
                       duration={500}
                     >
@@ -372,7 +384,12 @@ export default function Nav() {
             )}
           </ul>
           <ScrollLink to="intro" spy={true} offset={-75} duration={500}>
-            <Fab color="secondary" className="metallic-button" aria-label="up" style={styles.up}>
+            <Fab
+              color="secondary"
+              className="metallic-button"
+              aria-label="up"
+              style={styles.up}
+            >
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollLink>
