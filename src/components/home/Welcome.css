@@ -25,6 +25,7 @@
   }
 }
 
+
 .animated-title, .title {
   color: #ffffff;
   font-family: Roboto, Arial, sans-serif;
@@ -34,21 +35,21 @@
 }
 
 .animated-title>div, .title>div {
-  height: 36vmin; /* combination of this plus span height in div div span below*/
+  height: 32vmin; /* combination of this plus span height in div div span below*/
   overflow: hidden;
 
   width: 100%;
 }
 
 .animated-title>div div , .title>div div {
-  font-size: 14vmin;
+  font-size: 12vmin;
   padding: 1.5vmin 0;
 
 }
 
 .animated-title>div div span, .title>div div span {
   display: block;
-  height: 15vmin;  /* combination of this plust height in .animated-title>div  above change  */
+  height: 12vmin;  /* combination of this plust height in .animated-title>div  above change  */
   
 
 }
@@ -62,7 +63,7 @@
   animation: showTopText 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
-  bottom: 0;
+   bottom: 0;
   transform: translate(0, 100%);
 }
 
@@ -76,6 +77,8 @@
   animation-delay: 1.75s;
   animation-fill-mode: forwards;
   transform: translate(0, -100%);
+
+
   
 
 }

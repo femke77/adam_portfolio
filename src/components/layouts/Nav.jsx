@@ -46,8 +46,9 @@ export default function Nav() {
   const scroller = Scroll.scroller;
 
   const goToPageAndScroll = async (selector) => {
-    
+
     await navigate("/");
+ 
     await scroller.scrollTo(selector, {
       duration: 5,
     

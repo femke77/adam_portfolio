@@ -11,7 +11,17 @@ const ProcessAnimation = () => {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
-    const sections = sectionsRef.current;
+      const sections = sectionsRef.current;
+      
+      const calculateXPercent = (index) => {
+          if (index === 3) {
+           
+            return -index * 32;
+          }
+          return -index * 100 + (index > 0 ? 4.5 * index : 0); // Same logic for first 3 sections
+        };
+      
+      
 
     // Ensure each section is in an array
     const ctx = gsap.context(() => {
@@ -20,13 +30,7 @@ const ProcessAnimation = () => {
       mm.add("(min-width: 767px)", () => {
         // Horizontal scroll effect
         gsap.to(sections, {
-            xPercent: (i) => {
-                //need to add adjustments for various view widths
-                if (i === sections.length - 1) {
-                  return -i * 32; // Adjust for the larger fourth section
-                }
-                return -i * 100 + (i > 0 ? 4.5 * i : 0); // For first 3 sections (50vw each)
-              },
+            xPercent: i => calculateXPercent(i),
         //   xPercent: (i) => -i * 100 + (i > 0 ? 4.5 * i : 0),
           duration: (i) => 0.5 * i,
           ease: "none", // Linear motion
@@ -53,15 +57,15 @@ const ProcessAnimation = () => {
   }, []);
 
   return (
-    <section>
-      <div ref={containerRef} className="container">
+    <section className="box">
+      <div ref={containerRef} >
         <ScrollingText />
-        <div className="row">
-          <div className="pin-process overflow-hidden">
+        <div className="">
+          <div className="pin-process overflow-hidden ">
             <div className="inner-div">
               <div
                 ref={(el) => (sectionsRef.current[0] = el)}
-                className="process-item-wrapper w-100 black-gradient py-64 py-xl-192 position-relative"
+                className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
               >
                 <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
                   <div className="label-wrapper border rounded border-extra-gray d-inline-flex">
@@ -93,7 +97,7 @@ const ProcessAnimation = () => {
               </div>
               <div
                 ref={(el) => (sectionsRef.current[1] = el)}
-                className="process-item-wrapper w-100 black-gradient py-64 py-xl-192 position-relative"
+                className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
               >
                 <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
                   <div className="label-wrapper border rounded border-extra-gray d-inline-flex">
@@ -125,7 +129,7 @@ const ProcessAnimation = () => {
               </div>
               <div
                 ref={(el) => (sectionsRef.current[2] = el)}
-                className="process-item-wrapper w-100 black-gradient py-64 py-xl-192 position-relative"
+                className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
               >
                 <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
                   <div className="label-wrapper border rounded border-extra-gray d-inline-flex">
@@ -157,7 +161,7 @@ const ProcessAnimation = () => {
               </div>
               <div
                 ref={(el) => (sectionsRef.current[3] = el)}
-                className="process-item-wrapper-last w-100  py-64 py-xl-192 position-relative"
+                className="process-item-wrapper-last py-64 py-xl-192 position-relative"
               >
                 <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
                   <div className="label-wrapper border rounded border-extra-gray d-inline-flex">

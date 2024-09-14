@@ -31,13 +31,13 @@ export default function Layout({bgStyles, children}) {
 
     return (
         <Grid container={true} spacing={3} className={location === "Contact" ? "contact" : ""} >
-            <Grid item={true} sx={{flexDirection: "column", alignItems:"center"}} xs={1.5} sm={0.5} md={0.5}  lg={1}>
+            <Grid item={true} sx={{flexDirection: "column", alignItems:"center"}} xs={1.5} sm={1} md={1}  lg={1}>
                 <Nav />
             </Grid>
-            <Grid item={true} sx={{ padding: "20px"}} xs={10.5} sm={11} md={11} lg={10}>
+            <Grid item={true} sx={{ padding: "20px"}} xs={10.5} sm={10} md={10} lg={10}>
                {children}   {/* lifted state would have to send props to children */}
             </Grid>
-            <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={0} sm={0.5} md={0.5} lg={1}>
+            <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={0} sm={1} md={1} lg={1}>
                 {!isMobile ? (<Socials styles={styles.socials} placement={'right' } color={'secondary'} background={'transparent'} isMobile={isMobile} />) : ("")}
             
             </Grid>

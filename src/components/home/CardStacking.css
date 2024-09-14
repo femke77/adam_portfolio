@@ -2,10 +2,6 @@
     padding-block: 4px !important;
 }
 
-.containter {
-    /* margin: 40px; */
-
-}
 
 .px-12 {
     padding-inline: 12px !important;
@@ -25,19 +21,22 @@
 .process-item-wrapper,
 .process-item-wrapper-last {
     /* margin-top: 90px; */
-    width: 50vh;
-    height: 69vh;
+   
+    height: 68vh;
     border: .5px solid white;
     border-radius: 10px;
     padding-block: 7rem;
     margin-right: 3px;
 
 }
-
+.process-item-wrapper{
+    width: 50vh;
+}
 .process-item-wrapper-last {
     width: 150vh;
     background-color: white;
     color: black;
+    margin-left: 3px;
 
 }
 
@@ -53,9 +52,7 @@
     border-radius: 20px;
 }
 
-.mw-578px {
-    max-width: 578px;
-}
+
 
 .ps-64 {
     padding-left: 64px;

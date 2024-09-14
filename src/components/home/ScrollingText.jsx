@@ -33,8 +33,7 @@ export default function ScrollAnimation() {
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
-    
-        
+        padding: "4rem"
       }}
     >
       <Box
@@ -43,14 +42,14 @@ export default function ScrollAnimation() {
           // alter these as you wish
           fontSize: {
             xs: "80px",
-            sm: "100px",
-            md: "160px",
+            sm: "220px",
+            md: "220px",
             lg: "240px",
             xl: "240px",
           },
           transition: "transform 0.2s linear",
-         paddingRight: "100px",
-        letterSpacing: "0.5px",
+          paddingRight: "100px",
+          letterSpacing: "0.5px",
         }}
       >
         {/* <span style={{ color: "blue" }}>P</span>ORK
@@ -58,9 +57,9 @@ export default function ScrollAnimation() {
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK
         <span style={{ color: "blue" }}>W</span>ORK */}
-
         {/* Alternate: */}
-        WORK<span style={{ color: "blue" }}>WORK</span>WORK<span style={{ color: "blue" }}>WORK</span>WORKWORKWORK
+        WORK<span style={{ color: "blue" }}>WORK</span>WORK
+        <span style={{ color: "blue" }}>WORK</span>WORKWORKWORK
       </Box>
     </Box>
   );

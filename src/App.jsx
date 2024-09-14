@@ -1,6 +1,6 @@
 // Bringing in the required import from 'react-router-dom'
 import { Outlet } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { CssBaseline } from "@mui/material";
 import "./App.css";
 import Layout from "./components/layouts/Layout";

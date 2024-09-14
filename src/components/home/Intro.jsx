@@ -74,7 +74,7 @@ const [isVisible, setIsVisible] = useState(false);
   }, [isVisible]);
 
   return (
-    <div className="center">
+    <div id="intro" className="center">
       <p 
         ref={textRef}
         className={`intro-p text-draw ${isVisible ? 'reveal' : 'hidden'}`}
