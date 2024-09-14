@@ -53,7 +53,9 @@
   
 
 }
-
+div.text-bottom {
+  height: 60vmin;
+}
 .animated-title>div.text-top, .title>div.text-top {
   border-bottom: 1vmin solid #f0e8e8;
  
