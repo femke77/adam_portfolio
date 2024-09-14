@@ -33,6 +33,7 @@ export default function ScrollAnimation() {
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
+    
         
       }}
     >
@@ -48,7 +49,7 @@ export default function ScrollAnimation() {
             xl: "240px",
           },
           transition: "transform 0.2s linear",
-      paddingRight: "100px  ",
+         paddingRight: "100px",
         letterSpacing: "0.5px",
         }}
       >

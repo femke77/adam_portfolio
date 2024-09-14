@@ -1,67 +1,81 @@
-
-  .py-4 {
+.py-4 {
     padding-block: 4px !important;
-  }
-  .containter {
-    margin: 40px;
-  }
-  .px-12 {
+}
+
+.containter {
+    /* margin: 40px; */
+
+}
+
+.px-12 {
     padding-inline: 12px !important;
-  }
-  
-  .yellow-circle {
+}
+
+.yellow-circle {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: blue;
-  }
-  .process-item-wrapper {
-   margin-top: 25px;
+}
 
-   border: .5px solid white;
-    border-radius: 10px;
-  }
-
-  .label-wrapper > span {
-    padding-block: 4px;
-  }
-  
-  .black-gradient {
+.black-gradient {
     background: linear-gradient(180deg, #151515 0%, #1c1c1c 100%);
-  }
-  
-  .number-item {
+}
+
+.process-item-wrapper,
+.process-item-wrapper-last {
+    /* margin-top: 90px; */
+    width: 50vh;
+    height: 69vh;
+    border: .5px solid white;
+    border-radius: 10px;
+    padding-block: 7rem;
+    margin-right: 3px;
+
+}
+
+.process-item-wrapper-last {
+    width: 150vh;
+    background-color: white;
+    color: black;
+
+}
+
+.label-wrapper>span {
+    padding-block: 4px;
+}
+
+
+
+.number-item {
     width: 64px;
     height: 64px;
     border-radius: 20px;
-  }
-  
-  .mw-578px {
+}
+
+.mw-578px {
     max-width: 578px;
-  }
-  
-  .ps-64 {
+}
+
+.ps-64 {
     padding-left: 64px;
-  }
-  /* Styling IGNORE THIS - END*/
-  
-  /* for the animation - START */
-  .pin-process > .inner-div {
+}
+
+
+.pin-process>.inner-div {
     overflow-x: hidden;
-    width: 400%; /*items * 100% */
+    width: 400%;
+    /*items * 100% */
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
-  }
-  
-  .process-item-wrapper {
-    width: 100vw;
-    padding-block: 7rem;
-  }
-  /*for the animation - END */
-  
-  /* Desire final positions - START */
-  /* .inner-div .process-item-wrapper:nth-child(2) {
+}
+
+
+/*for the animation - END */
+
+/* Desire final positions - START */
+/* .inner-div .process-item-wrapper:nth-child(2) {
     translate: calc(-100% + 64px) 0!important;
   }
   
@@ -72,5 +86,4 @@
   .inner-div .process-item-wrapper:nth-child(4) {
     translate: -285% 0;
   } */
-  /* Desire final positions - END */
-  
+/* Desire final positions - END */

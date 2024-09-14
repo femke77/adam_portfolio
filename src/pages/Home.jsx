@@ -18,7 +18,7 @@ export default function Home() {
       <Welcome />
       <Intro />
       <About />
-      <ScrollingText />
+      {/* <ScrollingText /> */}
       <CardStacking />
       <Portfolio />
       <Skills />
