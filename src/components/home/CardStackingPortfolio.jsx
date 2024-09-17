@@ -61,12 +61,12 @@ const ProcessAnimation = () => {
       <div ref={containerRef}>
         <ScrollingText />
         <div className="">
-          <div className="pin-process overflow-hidden ">
+          <div className="pin-process">
             <div className="inner-div">
               {data.map((project, index) => (
                 <div
                   ref={(el) => (sectionsRef.current[index] = el)}
-                  className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
+                  className="process-item-wrapper"
                   key={project.name}
                 >
                   <ProjectCard project={project} index={index + 1} />
