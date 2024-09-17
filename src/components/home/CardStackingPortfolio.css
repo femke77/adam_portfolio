@@ -7,15 +7,6 @@
     padding-inline: 12px !important;
 }
 
-.yellow-circle {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: blue;
-}
-
-.black-gradient {
-}
 
 .process-item-wrapper,
 .process-item-wrapper-last {
@@ -26,19 +17,16 @@
     border-radius: 10px;
     padding-block: 7rem;
     margin-right: 3px;
-    
+
 }
 
 .process-item-wrapper {
     width: 50vh;
     background: black
-
-
 }
 
 .process-item-wrapper:hover {
     background-color: gray
-    
 }
 
 .process-item-wrapper-last {
@@ -71,9 +59,8 @@
 .pin-process>.inner-div {
     overflow-x: hidden;
     width: 400%;
-
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
-  
+
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./CardStacking.css";
+import "./CardStackingPortfolio.css";
 import ScrollingText from "./ScrollingText";
 import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
@@ -69,7 +69,7 @@ const ProcessAnimation = () => {
                   className="process-item-wrapper black-gradient py-64 py-xl-192 position-relative"
                   key={project.name}
                 >
-                  <ProjectCard project={project} index={index+1} />
+                  <ProjectCard project={project} index={index + 1} />
                 </div>
               ))}
 

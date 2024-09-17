@@ -1,23 +1,29 @@
 // Bringing in the required import from 'react-router-dom'
 import { Outlet } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import SmoothScrolling from "./components/home/LenisSmoothScrolling";
 import { CssBaseline } from "@mui/material";
 import "./App.css";
 import Layout from "./components/layouts/Layout";
-import {AnimationProvider} from "./utils/AnimationContext.jsx";
+import { AnimationProvider } from "./utils/AnimationContext.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {
   // The Outlet component will conditionally swap between the different pages according to the URL
   return (
     <>
       <CssBaseline />
-      <AnimationProvider>
-        <main >
-          <Layout>
-            <Outlet />
-          </Layout>
-        </main>
-      </AnimationProvider>
+      {/* <SmoothScrolling> */}
+        <ParallaxProvider>
+          <AnimationProvider>
+            <main>
+              <Layout>
+                <Outlet />
+              </Layout>
+            </main>
+          </AnimationProvider>
+        </ParallaxProvider>
+      {/* </SmoothScrolling> */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import "./CardStacking.css";
+import "./CardStackingPortfolio.css";
 
 export default function ProjectCard({ project, index }) {
     let i = 1;

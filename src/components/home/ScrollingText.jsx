@@ -30,8 +30,6 @@ export default function ScrollAnimation() {
     <Box
       style={{
         paddingTop: "3rem",
-        // marginBottom: "0.5rem",
-        // height: "40vh",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
@@ -43,8 +41,7 @@ export default function ScrollAnimation() {
           fontSize: {
             xs: "80px",
             sm: "199px",
-          
-           
+   
           },
           transition: "transform 0.2s linear",
           paddingRight: "100px",

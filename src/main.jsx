@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 import App from './App';
 import Error from './pages/Error';
