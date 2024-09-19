@@ -59,7 +59,7 @@ export default function Nav() {
       scroller.scrollTo(selector, {
         duration: 5,
 
-        offset: -75,
+        offset: 30,
         spy: true,
       });
       setTimeout(() => {

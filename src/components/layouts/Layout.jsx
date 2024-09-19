@@ -14,6 +14,7 @@ export default function Layout({bgStyles, children}) {
     //const [animated, setAnimated] = React.useState(false);  // lifted state for animation ??? 
 
     
+    
     const path = useLocation().pathname;
     const location = path.split("/")[1];
     const isMobile = useMediaQuery('(max-width:700px)');
@@ -30,6 +31,7 @@ export default function Layout({bgStyles, children}) {
       }
 
     return (
+  
         <Grid container={true} spacing={3} className={location === "Contact" ? "contact" : ""} >
             <Grid item={true} sx={{flexDirection: "column", alignItems:"center"}} xs={1.5} sm={1} md={1}  lg={1}>
                 <Nav />
@@ -42,5 +44,6 @@ export default function Layout({bgStyles, children}) {
             
             </Grid>
         </Grid>
+     
     )
 }
