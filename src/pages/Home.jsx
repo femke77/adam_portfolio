@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import ScrollingText from "../components/home/ScrollingText";  //rendered through portfolio2 (CardStacking)
 import '../components/home/Intro.css'; // Import CSS file for styles
 import Portfolio2 from "../components/home/CardStackingPortfolio";
-import ParallaxPortfolio from "../components/home/ParallaxPortfolio";
+import ParallaxPortfolio from "../components/AlternateOrTest/ParallaxPortfolio";
 
 // TODO Parallax effects on this page
 
@@ -23,8 +23,9 @@ export default function Home() {
       <Portfolio2 />
       {/* <Portfolio /> */}
       <Skills />
-      <ParallaxPortfolio />
+      {/* <ParallaxPortfolio /> */}
       <Footer />
+ 
       {/* Testing only: */}
       {/* <Contact2/> */}
       {/* <Contact/>  */}

@@ -9,7 +9,7 @@ import ProjectCard from "./ProjectCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const ProcessAnimation = () => {
-  console.log(data.length);
+  
 
   const containerRef = useRef(null);
   const sectionsRef = useRef([]);
@@ -40,12 +40,15 @@ const ProcessAnimation = () => {
             scrub: 0.1,
 
             start: "top -70",
-            end: `+=${sections.length * 400}vw`,
+            end: `+=${sections.length * 600}vw`,
             invalidateOnRefresh: true,
           },
         });
       });
 
+     
+      
+      
       return () => {
         mm.revert();
       };
@@ -57,10 +60,10 @@ const ProcessAnimation = () => {
   }, []);
 
   return (
-    <section id="projects" className="box">
-      <div ref={containerRef}>
+  
+      <div ref={containerRef} id="projects" style={{overflow: "hidden"}}>
         <ScrollingText />
-        <div className="">
+ 
           <div className="pin-process">
             <div className="inner-div">
               {data.map((project, index) => (
@@ -76,27 +79,26 @@ const ProcessAnimation = () => {
               {/* Last card not in map, static */}
               <div
                 ref={(el) => (sectionsRef.current[data.length] = el)}
-                className="process-item-wrapper-last py-64 py-xl-192 position-relative"
+                className="process-item-wrapper-last"
+          
               >
-                <div className="mw-578px ps-64 d-flex flex-column gap-24 align-items-start">
-                  <div className="label-wrapper border rounded border-extra-gray d-inline-flex">
-                    <span className="d-flex gap-10 align-items-center justify-content-center py-4 px-12">
-                      <span className="fs-14 fs-xl-20 text-extra-gray lh-1"></span>
-                    </span>
-                  </div>
+                <div style={{padding: "20px"}}>
+                 
+                 <span>Contact </span> <h1 style={{fontSize: "4rem"}}>Let's Work Together!</h1>
 
-                  <h1 className="">Let's Work Together!</h1>
-
-                  <div className="fs-16 fs-xl-18 text-extra-gray lh-normal">
-                    <p></p>
+                  <div >
+                    <p>email@gmail.com</p>
+                    <p>000-444-5555</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+    
         </div>
       </div>
-    </section>
+
+      
+
   );
 };
 

@@ -1,11 +1,11 @@
 // Bringing in the required import from 'react-router-dom'
 import { Outlet } from "react-router-dom";
-import SmoothScrolling from "./components/home/LenisSmoothScrolling";
+import SmoothScrolling from "./components/AlternateOrTest/LenisSmoothScrolling.jsx";
 import { CssBaseline } from "@mui/material";
 import "./App.css";
 import Layout from "./components/layouts/Layout";
 import { AnimationProvider } from "./utils/AnimationContext.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {

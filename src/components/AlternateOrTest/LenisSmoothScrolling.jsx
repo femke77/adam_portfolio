@@ -1,4 +1,4 @@
-import { duration } from "@mui/material";
+
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 function SmoothScrolling({ children }) {

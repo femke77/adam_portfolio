@@ -9,6 +9,7 @@ img {
 html,
 body, main {
   background: #1F1E2E;
+  overflow-x: hidden;
 
 }
 
