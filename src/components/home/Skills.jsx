@@ -29,6 +29,7 @@ const skills = [
   { title: "GitHub", src: githubLogo, alt: "GitHub Logo" },
 ];
 
+// TODO gsap ticker animation
 export default function Skills() {
   return (
     <div style={{marginTop: "120px", textAlign:"center", backgroundColor:"white", color: "black"}}>

@@ -11,7 +11,7 @@ export default function ProjectCard({ project, index }) {
           src={projects[project.image]}
           alt={project.name}
         />
-       <a className="icon-hover" href="https://github.com/adam" ><i className=" fa-brands fa-github fa-4x fa" style={{color: "gray", backgroundColor: "white", borderRadius: "50%"}}></i></a>
+       <a className="icon-hover" href="https://github.com/adam" ><i className=" fa-brands fa-github fa-5x fa" style={{color: "gray", backgroundColor: "white", borderRadius: "50%"}}></i></a>
 
       </a>{" "}
 
