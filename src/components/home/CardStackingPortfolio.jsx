@@ -5,12 +5,12 @@ import "./CardStackingPortfolio.css";
 import ScrollingText from "./ScrollingText";
 import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProcessAnimation = () => {
-  
-
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const sectionsRef = useRef([]);
 
@@ -46,9 +46,6 @@ const ProcessAnimation = () => {
         });
       });
 
-     
-      
-      
       return () => {
         mm.revert();
       };
@@ -60,45 +57,69 @@ const ProcessAnimation = () => {
   }, []);
 
   return (
-  
-      <div ref={containerRef} id="projects" style={{overflow: "hidden"}}>
-        <ScrollingText />
- 
-          <div className="pin-process">
-            <div className="inner-div">
-              {data.map((project, index) => (
-                <div
-                  ref={(el) => (sectionsRef.current[index] = el)}
-                  className="process-item-wrapper"
-                  key={project.name}
-                >
-                  <ProjectCard project={project} index={index + 1} />
-                </div>
-              ))}
+    <div ref={containerRef} id="projects" style={{ overflow: "hidden" }}>
+      <ScrollingText />
+{/* TODO Mobile view is not done at all */}
+      <div className="pin-process">
+        <div className="inner-div">
+          {data.map((project, index) => (
+            <div
+              ref={(el) => (sectionsRef.current[index] = el)}
+              className="process-item-wrapper"
+              key={project.name}
+            >
+              <ProjectCard project={project} index={index + 1} />
+            </div>
+          ))}
+{/* TODO need to make this card take the right size depending on screen width */}
+          {/* Last card not in map, static */}
+          <div
+            ref={(el) => (sectionsRef.current[data.length] = el)}
+            className="process-item-wrapper-last"
+          >
 
-              {/* Last card not in map, static */}
+            <div style={{display: "flex"}}>
+
+            <div style={{ padding: "20px", flexBasis: "50%"      }}>
+              <div>Contact </div>
+              <h1 style={{ fontSize: "3.5rem" }}>Let's Work Together!</h1>
+              <div style={{ marginLeft: "25px" }}>
               <div
-                ref={(el) => (sectionsRef.current[data.length] = el)}
-                className="process-item-wrapper-last"
-          
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  width: "40%",
+                  textAlign: "center",
+                  padding: "4px",
+                }}
               >
-                <div style={{padding: "20px"}}>
-                 
-                 <span>Contact </span> <h1 style={{fontSize: "4rem"}}>Let's Work Together!</h1>
-
-                  <div >
-                    <p>email@gmail.com</p>
-                    <p>000-444-5555</p>
-                  </div>
-                </div>
+                email@gmail.com
+              </div>
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  width: "40%",
+                  textAlign: "center",
+                  padding: "4px",
+                }}
+              >
+                000-000-0000
               </div>
             </div>
-    
+
+            </div>
+
+            
+            <div style={{padding: "60px", flexBasis: "50%" }}> <p>We are always happy to talk. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button onClick={()=>navigate("/Contact")} style={{background: "black", color: "white", borderRadius: "10px", height:"50px", width: "150px"}}>Contact Now</button>
+            
+            </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      
-
+    </div>
   );
 };
 
