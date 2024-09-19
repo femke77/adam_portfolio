@@ -1,4 +1,3 @@
-
 .process-item-wrapper,
 .process-item-wrapper-last {
     margin-top: 0px;
@@ -10,13 +9,14 @@
     margin-right: 3px;
 
     filter: grayscale(45%);
-    
+
 }
 
 .process-item-wrapper {
     width: 50vh;
     background: #171717;
-    background: linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);}
+    background: linear-gradient(90deg, hsla(248, 21%, 15%, 1) 0%, hsla(250, 14%, 61%, 1) 100%);
+}
 
 .process-item-wrapper img {
     height: 100%;
@@ -30,7 +30,7 @@
 
 .process-item-wrapper-last {
     width: 150vh;
-    overflow:hidden;
+    overflow: hidden;
     background-color: white;
     color: black;
     margin-left: 3px;
@@ -79,18 +79,23 @@
     width: 100%;
 }
 
-.scroll-cards .lower, .scroll-cards .upper {
+.scroll-cards .lower,
+.scroll-cards .upper {
     -moz-column-gap: 90px;
     column-gap: 90px;
     display: flex;
 }
 
-.scroll-cards .lower__ctas, .scroll-cards .upper__hl {
+.scroll-cards .lower__ctas,
+.scroll-cards .upper__hl {
     max-width: 376px;
     min-width: 376px;
 }
 
-.h3, .reference-overview .reference .content__hl, .scroll-cards .upper__hl, h3 {
+.h3,
+.reference-overview .reference .content__hl,
+.scroll-cards .upper__hl,
+h3 {
     font-size: 65px;
     font-variation-settings: "wght" 500;
     line-height: 70px;
@@ -107,7 +112,9 @@
     margin-top: auto;
     padding-top: 40px;
 }
-.scroll-cards .lower, .scroll-cards .upper {
+
+.scroll-cards .lower,
+.scroll-cards .upper {
     -moz-column-gap: 90px;
     column-gap: 90px;
     display: flex;
@@ -119,7 +126,9 @@
     flex-direction: column;
     row-gap: 5px;
 }
-.scroll-cards .lower__ctas, .scroll-cards .upper__hl {
+
+.scroll-cards .lower__ctas,
+.scroll-cards .upper__hl {
     max-width: 376px;
     min-width: 376px;
 }
@@ -133,9 +142,14 @@
 .scroll-cards .lower .place__hl {
     margin-bottom: 30px;
 }
-.h6, .scroll-cards .card .content .info__sl, .scroll-cards .lower .place__hl, .scroll-cards .upper__hl span, .site-footer .main-footer .right .column__hl, h6 {
+
+.h6,
+.scroll-cards .card .content .info__sl,
+.scroll-cards .lower .place__hl,
+.scroll-cards .upper__hl span,
+.site-footer .main-footer .right .column__hl,
+h6 {
     font-size: 20px;
     font-variation-settings: "wght" 400;
     line-height: 26px;
 }
-
