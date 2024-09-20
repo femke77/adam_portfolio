@@ -38,7 +38,7 @@ const ProcessAnimation = () => {
       }
       else {
         if (index === data.length) {
-          return -index * 44;
+          return -index * 46.5;
         }
         return -index * 100 + (index > 0 ? 4.5 * index : 0);
       }
@@ -97,20 +97,21 @@ const ProcessAnimation = () => {
         ))}
 
         {/* Last card not in map, static */}
-        <div
-          ref={(el) => (sectionsRef.current[data.length] = el)}
+        <Box
           className="process-item-wrapper-last"
+          ref={(el) => (sectionsRef.current[data.length] = el)}
+          sx={{width: {md: "72vw", lg: "76vw", xl: "76vw"}}}
         >
           <div style={{ display: "flex" }}>
             <div style={{ padding: "25px", flexBasis: "45%" }}>
               <div>Contact </div>
-              <h1 style={{ fontSize: "3.5rem" }}>Let's Work Together!</h1>
+              <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>Let's Work Together!</h1>
               <div style={{ marginLeft: "25px" }}>
                 <div
                   style={{
                     border: "1px solid black",
                     borderRadius: "10px",
-                    width: "50%",
+                    width: "80%",
                     textAlign: "center",
                     padding: "4px",
                   }}
@@ -121,7 +122,7 @@ const ProcessAnimation = () => {
                   style={{
                     border: "1px solid black",
                     borderRadius: "10px",
-                    width: "50%",
+                    width: "80%",
                     textAlign: "center",
                     padding: "4px",
                     marginTop: "5px",
@@ -155,7 +156,7 @@ const ProcessAnimation = () => {
               </button>
             </div>
           </div>
-        </div>
+        </Box>
       </div>
     </div>
   );
