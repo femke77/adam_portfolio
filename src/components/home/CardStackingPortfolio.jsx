@@ -114,7 +114,7 @@ const ProcessAnimation = () => {
                     padding: "4px",
                   }}
                 >
-                  <TextScrambleComponent phrases={['Email Adam Now', '001110001111', 'email@gmail.com']} />
+                  <TextScrambleComponent phrases={['Email Adam!', '001110001111', 'email@gmail.com']} />
                 </div>
                 <div
                   style={{
