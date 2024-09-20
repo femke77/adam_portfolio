@@ -24,7 +24,7 @@ export default function Home() {
       {/* <Portfolio /> */}
       <Skills />
       {/* <ParallaxPortfolio /> */}
-      <TextScrambleComponent phrases={['Email Adam Now', '001110001111', 'email@gmail.com']} />
+   
       <Footer />
  
       {/* Testing only: */}
