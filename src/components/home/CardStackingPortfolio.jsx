@@ -7,6 +7,7 @@ import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import Box  from "@mui/system/Box";
+import TextScrambleComponent from "./TextToBinary";
 
 // TODO : binary letter animation on email and phone
 // FIXME BELOW 900 NEEDS WORK
@@ -113,7 +114,7 @@ const ProcessAnimation = () => {
                     padding: "4px",
                   }}
                 >
-                  email@gmail.com
+                  <TextScrambleComponent phrases={['Email Adam Now', '001110001111', 'email@gmail.com']} />
                 </div>
                 <div
                   style={{
@@ -125,7 +126,7 @@ const ProcessAnimation = () => {
                     marginTop: "5px",
                   }}
                 >
-                  000-000-0000
+                     <TextScrambleComponent phrases={['Call Now!', '001110001111', '213-555-8888']} />
                 </div>
               </div>
             </div>
