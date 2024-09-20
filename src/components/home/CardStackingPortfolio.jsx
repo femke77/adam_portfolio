@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./CardStackingPortfolio.css";
@@ -8,7 +8,8 @@ import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import Box  from "@mui/system/Box";
 
-// BELOW 900 NEEDS WORK
+// TODO : binary letter animation on email and phone
+// FIXME BELOW 900 NEEDS WORK
 // xs, extra-small: 0px
 // sm, small: 600px
 
@@ -16,6 +17,7 @@ import Box  from "@mui/system/Box";
 // md, medium: 900px -
 // lg, large: 1200px -
 // xl, extra-large: 1536px -
+
 // When the screen gets really huge, maybe just reduce center container size
 
 gsap.registerPlugin(ScrollTrigger);
@@ -74,11 +76,6 @@ const ProcessAnimation = () => {
     };
   }, []);
 
-  // TODO Below 1282 width the cards need min width 320 ? which changes the xPercent calculation CONTANTLY
-
-  // TODO Below 794 ? the cards need to enter tablet/mobile view with stacking and no scrolltrigger
-
-  // FR : binary letter animation on email and phone
 
   return (
     <div ref={containerRef} id="projects" style={{ overflow: "hidden" }}>
