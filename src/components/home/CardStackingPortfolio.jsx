@@ -6,6 +6,17 @@ import ScrollingText from "./ScrollingText";
 import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
+import Box  from "@mui/system/Box";
+
+// BELOW 900 NEEDS WORK
+// xs, extra-small: 0px
+// sm, small: 600px
+
+// LOOKS GOOD:
+// md, medium: 900px -
+// lg, large: 1200px -
+// xl, extra-large: 1536px -
+// When the screen gets really huge, maybe just reduce center container size
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,20 +30,23 @@ const ProcessAnimation = () => {
     const sections = sectionsRef.current;
 
     const calculateXPercent = (index) => {
-      if (index === data.length) {
-        // last card is the larger 'work together' card
-
-        return -index * 31.5;
+    if (window.innerWidth >= 1200) {
+        if (index === data.length) {
+          return -index * 31.5;
+        }
+        return -index * 100 + (index > 0 ? 4.5 * index : 0);
       }
-
-      return -index * 100 + (index > 0 ? 4.5 * index : 0);
-    };
-
+      else {
+        if (index === data.length) {
+          return -index * 44;
+        }
+        return -index * 100 + (index > 0 ? 4.5 * index : 0);
+      }
+    }
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 767px)", () => {
-        // mobile view is not done. This cutoff might change
+      mm.add("(min-width: 793px)", () => {
         // Horizontal scroll effect
         gsap.to(sections, {
           xPercent: (i) => calculateXPercent(i),
@@ -60,30 +74,35 @@ const ProcessAnimation = () => {
     };
   }, []);
 
+  // TODO Below 1282 width the cards need min width 320 ? which changes the xPercent calculation CONTANTLY
+
+  // TODO Below 794 ? the cards need to enter tablet/mobile view with stacking and no scrolltrigger
+
+  // FR : binary letter animation on email and phone
+
   return (
     <div ref={containerRef} id="projects" style={{ overflow: "hidden" }}>
       <ScrollingText />
-      {/* TODO Mobile view is not done at all */}
+
       <div className="pin-process">
         {data.map((project, index) => (
-          <div
+          <Box
             ref={(el) => (sectionsRef.current[index] = el)}
             className="process-item-wrapper"
+            sx={{width: {md: "35vw", lg: "25vw", xl: "25vw"}}}
             key={project.name}
           >
             <ProjectCard project={project} index={index + 1} />
-          </div>
+          </Box>
         ))}
-        {/* TODO need to make this card take the right size depending on screen width */}
 
         {/* Last card not in map, static */}
         <div
           ref={(el) => (sectionsRef.current[data.length] = el)}
           className="process-item-wrapper-last"
-          // style={{width: "60%"}}
         >
           <div style={{ display: "flex" }}>
-            <div style={{ padding: "25px", flexBasis: "50%" }}>
+            <div style={{ padding: "25px", flexBasis: "45%" }}>
               <div>Contact </div>
               <h1 style={{ fontSize: "3.5rem" }}>Let's Work Together!</h1>
               <div style={{ marginLeft: "25px" }}>
@@ -91,7 +110,7 @@ const ProcessAnimation = () => {
                   style={{
                     border: "1px solid black",
                     borderRadius: "10px",
-                    width: "40%",
+                    width: "50%",
                     textAlign: "center",
                     padding: "4px",
                   }}
@@ -102,7 +121,7 @@ const ProcessAnimation = () => {
                   style={{
                     border: "1px solid black",
                     borderRadius: "10px",
-                    width: "40%",
+                    width: "50%",
                     textAlign: "center",
                     padding: "4px",
                     marginTop: "5px",
@@ -113,7 +132,7 @@ const ProcessAnimation = () => {
               </div>
             </div>
 
-            <div style={{ padding: "60px", flexBasis: "50%" }}>
+            <div style={{ padding: "60px 30px 60px 0px", flexBasis: "60%" }}>
               {" "}
               <p>
                 We are always happy to talk. Lorem ipsum dolor sit amet

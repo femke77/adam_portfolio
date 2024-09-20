@@ -4,6 +4,7 @@
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
+    margin-left: 5px;
 
 }
 .process-item-wrapper,
@@ -22,7 +23,7 @@
 
 .process-item-wrapper {
     width: 25vw;
-
+    /* min-width: 320px; */
 
     background: #171717;
     background: linear-gradient(90deg, hsla(248, 21%, 15%, 1) 0%, hsla(250, 14%, 61%, 1) 100%);
