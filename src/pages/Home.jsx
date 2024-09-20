@@ -10,7 +10,7 @@ import ScrollingText from "../components/home/ScrollingText";  //rendered throug
 import '../components/home/Intro.css'; // Import CSS file for styles
 import Portfolio2 from "../components/home/CardStackingPortfolio";
 import ParallaxPortfolio from "../components/AlternateOrTest/ParallaxPortfolio";
-
+import TextScrambleComponent from "../components/home/TextToBinary";
 // TODO Parallax effects on this page
 
 export default function Home() {
@@ -24,6 +24,7 @@ export default function Home() {
       {/* <Portfolio /> */}
       <Skills />
       {/* <ParallaxPortfolio /> */}
+      <TextScrambleComponent phrases={['Email Adam Now', '001110001111', 'email@gmail.com']} />
       <Footer />
  
       {/* Testing only: */}
