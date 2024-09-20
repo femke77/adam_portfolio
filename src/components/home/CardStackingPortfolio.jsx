@@ -6,10 +6,10 @@ import ScrollingText from "./ScrollingText";
 import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
-import Box  from "@mui/system/Box";
+import Box from "@mui/system/Box";
 import TextScrambleComponent from "./TextToBinary";
 
-// TODO : binary letter animation on email and phone
+// FIXME : binary letter animation on email and phonek needs to change to onHover
 // FIXME BELOW 900 NEEDS WORK
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -33,19 +33,18 @@ const ProcessAnimation = () => {
     const sections = sectionsRef.current;
 
     const calculateXPercent = (index) => {
-    if (window.innerWidth >= 1200) {
+      if (window.innerWidth >= 1200) {
         if (index === data.length) {
           return -index * 31.5;
         }
         return -index * 100 + (index > 0 ? 4.5 * index : 0);
-      }
-      else {
+      } else {
         if (index === data.length) {
           return -index * 46.5;
         }
         return -index * 100 + (index > 0 ? 4.5 * index : 0);
       }
-    }
+    };
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
@@ -77,7 +76,6 @@ const ProcessAnimation = () => {
     };
   }, []);
 
-
   return (
     <div ref={containerRef} id="projects" style={{ overflow: "hidden" }}>
       <ScrollingText />
@@ -87,7 +85,7 @@ const ProcessAnimation = () => {
           <Box
             ref={(el) => (sectionsRef.current[index] = el)}
             className="process-item-wrapper"
-            sx={{width: {md: "35vw", lg: "25vw", xl: "25vw"}}}
+            sx={{ width: { md: "35vw", lg: "25vw", xl: "25vw" } }}
             key={project.name}
           >
             <ProjectCard project={project} index={index + 1} />
@@ -98,12 +96,14 @@ const ProcessAnimation = () => {
         <Box
           className="process-item-wrapper-last"
           ref={(el) => (sectionsRef.current[data.length] = el)}
-          sx={{width: {md: "72vw", lg: "76vw", xl: "76vw"}}}
+          sx={{ width: { md: "72vw", lg: "76vw", xl: "76vw" } }}
         >
           <div style={{ display: "flex" }}>
             <div style={{ padding: "25px", flexBasis: "45%" }}>
               <div>Contact </div>
-              <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>Let's Work Together!</h1>
+              <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>
+                Let's Work Together!
+              </h1>
               <div style={{ marginLeft: "25px" }}>
                 <div
                   style={{
@@ -114,7 +114,9 @@ const ProcessAnimation = () => {
                     padding: "4px",
                   }}
                 >
-                  <TextScrambleComponent phrases={['Email Adam!', '001110001111', 'email@gmail.com']} />
+                  <TextScrambleComponent
+                    phrases={["Email Adam!", "001110001111", "email@gmail.com"]}
+                  />
                 </div>
                 <div
                   style={{
@@ -126,7 +128,9 @@ const ProcessAnimation = () => {
                     marginTop: "5px",
                   }}
                 >
-                     <TextScrambleComponent phrases={['Call Now!', '001110001111', '213-555-8888']} />
+                  <TextScrambleComponent
+                    phrases={["Call Now!", "001110001111", "213-555-8888"]}
+                  />
                 </div>
               </div>
             </div>

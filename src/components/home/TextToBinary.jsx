@@ -1,21 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const useTextScramble = (chars = '0101') => {
-  const [text, setText] = useState('');
   const queueRef = useRef([]);
   const frameRef = useRef(0);
   const frameRequestRef = useRef(null);
   const resolveRef = useRef(null);
 
-  const randomChar = () => {
-    return chars[Math.floor(Math.random() * chars.length)];
-  };
+  const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
 
   const update = (el) => {
     let output = '';
     let complete = 0;
 
-    for (let i = 0, n = queueRef.current.length; i < n; i++) {
+    for (let i = 0; i < queueRef.current.length; i++) {
       let { from, to, start, end, char } = queueRef.current[i];
       if (frameRef.current >= end) {
         complete++;
@@ -57,40 +54,53 @@ const useTextScramble = (chars = '0101') => {
       queueRef.current.push({ from, to, start, end });
     }
 
-    cancelAnimationFrame(frameRequestRef.current);
+    cancelAnimationFrame(frameRequestRef.current); // Cancel any previous animation frame
     frameRef.current = 0;
     update(el);
 
     return promise;
   };
 
-  return { setTextScramble };
+  const cancelScramble = () => {
+    cancelAnimationFrame(frameRequestRef.current); // Stop animation frame
+  };
+
+  return { setTextScramble, cancelScramble };
 };
 
 const TextScrambleComponent = (props) => {
   const elRef = useRef(null);
-  const { setTextScramble } = useTextScramble();
+  const { setTextScramble, cancelScramble } = useTextScramble();
 
   const phrases = props.phrases;
+  let counter = 0;
 
-  useEffect(() => {
-    let counter = 0;
-
+  const handleMouseEnter = () => {
     const next = () => {
       setTextScramble(phrases[counter], elRef.current).then(() => {
-        setTimeout(next, 800);
+        counter++;
+        if (counter < phrases.length) {
+          setTimeout(next, 800); // Continue to the next phrase
+        } else {
+          counter = 0; // Reset counter after completing the cycle
+        }
       });
-      counter = (counter + 1) % phrases.length;
     };
 
     next();
+  };
 
-    return () => {
-      cancelAnimationFrame(next); // Clean up the animation frame on unmount
-    };
-  }, [setTextScramble]);
 
-  return <div className="text" ref={elRef}></div>;
+  return (
+    <div
+      className="text"
+      ref={elRef}
+      onMouseEnter={handleMouseEnter}
+
+    >
+      {phrases[0]}
+    </div>
+  );
 };
 
 export default TextScrambleComponent;
