@@ -1,17 +1,65 @@
-# react-portfolio
+# Adam's Web Developer Portfolio 
+  
 
-![welcome](./src/assets/am.gif)
+   ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Green Sock](https://img.shields.io/badge/green%20sock-88CE02?style=for-the-badge&logo=greensock&logoColor=white) ![Netlify](https://a11ybadges.com/badge?logo=netlify)
+  
+  ## Description  ✏️
+  
+  This project was coded for a student who wanted a modern, animated portfolio to showcase his work.
+  
+  ## Table of Contents 📖
+  
+  [Installation](#installation)
 
-## Description
+  [Usage](#usage)
 
-- I wanted to create a portfolio using React that I will be able to present to potential employers when looking for jobs after the end of bootcamp. Given the time available at the moment, I was successfully able to get a working infrastructure in place, but I have not yet fleshed out the various components or added styling yet. I will be doing that over the next few weeks as time allows. I'm happy with the fact that the current deployment functions as it should. 
+  
 
-## Usage
+  [Issues](#known-issues)
 
 
-## Credits
-- BCS Tutoring Services
-- Previous activities incl Mini Project for this module
-- https://react.dev/reference/react/useState
-- https://www.dhiwise.com/post/react-avatar-from-installation-to-advanced-customization
-- https://react.dev/reference/react/useEffect
+  [Credits](#credits)
+
+  [Questions](#questions)
+  
+  ## Installation 
+  
+  To install necessary dependencies, run the following command:
+  
+  ```
+  npm i
+  ```
+  
+  ## Usage 
+  
+  Clone the repository, run the install command and then 'npm start'. Then navigate to the localhost port.
+
+  ### Deployed Link
+  https://adams-portfolio2.netlify.app/
+
+### Screenshots
+![screenshot-0](src/assets/images/home.png)
+
+![screenshot-2](src/assets/images/work.png)
+
+![screenshot-1](src/assets/images/contact.png)
+
+
+
+______________________________________________________________________________________
+
+
+
+## Known Issues 
+The portfolio is not finished.
+
+
+
+## Credits 
+GSAP library for animations
+
+ ## Questions 
+  
+ If you have any questions about the repo or notice any bugs you want to report, open an issue or contact me directly at megan.meyers.388@gmail.com. 
+  
+  
