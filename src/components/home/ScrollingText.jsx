@@ -29,7 +29,7 @@ export default function ScrollAnimation() {
   return (
     <Box
       style={{
-        paddingTop: "0rem",
+        marginTop: "-30px",
         whiteSpace: "nowrap",
         width: "100%",
         overflow: "hidden",
