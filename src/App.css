@@ -8,7 +8,8 @@ img {
 
 html,
 body, main {
-  background: #1F1E2E;
+  background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%);
+
   overflow-x: hidden;
 
 }
@@ -17,7 +18,7 @@ main {
   margin-top: 0px;
   /* uncomment next two lines for gradient effect on welcome main only.  */
   /* height: 110vh; */
-  /* background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%); */
+  background: linear-gradient(349deg, rgba(2,0,36,1) 0%, rgba(51,51,54,1) 26%, rgba(0,0,0,1) 100%);
   color: white
 }
 
@@ -67,3 +68,21 @@ main {
     transform: translateX(-100%) rotate(var(--shine-deg));
   }
 }
+
+/* html, body, #root, main {
+  background: linear-gradient(105deg,#0d324d,#1b4e74,#7f5a83,#ad94af);
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
