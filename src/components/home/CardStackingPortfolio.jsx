@@ -7,9 +7,10 @@ import data from "../../utils/projectdata.json";
 import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/system/Box";
-import TextScrambleComponent from "./TextToBinary";
+import TextScrambleComponent from "./TextScramble";
+import { Grid, useMediaQuery } from "@mui/material";
 
-// FIXME : binary letter animation on email and phonek needs to change to onHover
+
 // FIXME BELOW 900 NEEDS WORK
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -19,11 +20,29 @@ import TextScrambleComponent from "./TextToBinary";
 // lg, large: 1200px -
 // xl, extra-large: 1536px -
 
-// When the screen gets really huge, maybe just reduce center container size
+// TODO: When the screen gets really huge move all elements to the center of the screen
+
+// FIXME : spacing between scrolling text and cards and below cards all needs updating
+// including max height??? for the cards
 
 gsap.registerPlugin(ScrollTrigger);
 
+const styles = {
+  buttonStyles: {
+    border: "1px solid black",
+    borderRadius: "10px",
+    width: "100%",
+    textAlign: "center",
+    padding: "4px",
+    marginTop: "5px",
+  },
+};
+
 const ProcessAnimation = () => {
+  
+  const isMobile = useMediaQuery("(max-width:900px)");
+  
+ 
   const navigate = useNavigate();
 
   const containerRef = useRef(null);
@@ -45,122 +64,225 @@ const ProcessAnimation = () => {
         return -index * 100 + (index > 0 ? 4.5 * index : 0);
       }
     };
-    const ctx = gsap.context(() => {
+
+  
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 793px)", () => {
-        // Horizontal scroll effect
-        gsap.to(sections, {
-          xPercent: (i) => calculateXPercent(i),
-          duration: (i) => 0.5 * i,
-          ease: "none",
+      mm.add("(min-width: 901px)", (context) => {
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
             pin: true,
+            // anticipatePin: 1,
             scrub: 0.1,
-
-            start: "top -70",
-            end: `+=${sections.length * 600}vw`,
+            start: "top top",
+            end: () => "+=" + containerRef.current.offsetWidth * 1.1, //part of the pause at the end of the animation
             invalidateOnRefresh: true,
           },
         });
+        context.add(tl);
+        tl.to(sections, {
+          xPercent: (i) => calculateXPercent(i),
+          ease: "none",
+          duration: (i) => 0.5 * i,
+        });
+
+        // Adds a pause at the end of the animation
+        tl.set({}, {}, "+=1"); // Change this number to increase or decrease the pause in combinaton with the end of the scrollTrigger
+     
+   
       });
 
       return () => {
+ 
         mm.revert();
       };
-    });
 
-    return () => {
-      ctx.revert();
-    };
+
   }, []);
 
-  return (
-    <div ref={containerRef} id="projects" style={{ overflow: "hidden" }}>
-      <ScrollingText />
-
-      <div className="pin-process">
-        {data.map((project, index) => (
+  if (isMobile) {
+    ScrollTrigger.killAll() //got to disable the scroll trigger for mobile
+    return (
+      <Box id="projects" sx={{margin: "10px"}}>
+        <Grid spacing={2}  container>
+          {data.map((project) => (
+            <Grid item xs={12} sm={6} md={6} key={project.name}>
+              <Box className="process-item-wrapper" sx={{maxHeight: "475px"}}>
+              <ProjectCard project={project}  />
+              </Box>
+              
+            </Grid>
+          ))}
+          <Grid item xs={12} sm={6} md={6} >
           <Box
-            ref={(el) => (sectionsRef.current[index] = el)}
-            className="process-item-wrapper"
-            sx={{ width: { md: "35vw", lg: "25vw", xl: "25vw" } }}
-            key={project.name}
+            className="process-item-wrapper-last"
+            sx={{maxHeight: "475px"}}
+         
           >
-            <ProjectCard project={project} index={index + 1} />
-          </Box>
-        ))}
-
-        {/* Last card not in map, static */}
-        <Box
-          className="process-item-wrapper-last"
-          ref={(el) => (sectionsRef.current[data.length] = el)}
-          sx={{ width: { md: "72vw", lg: "76vw", xl: "76vw" } }}
-        >
-          <div style={{ display: "flex" }}>
-            <div style={{ padding: "25px", flexBasis: "45%" }}>
-              <div>Contact </div>
-              <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>
-                Let's Work Together!
-              </h1>
-              <div style={{ marginLeft: "25px" }}>
-                <div
+            <div style={{ display: "flex" }}>
+              <div style={{ padding: "25px", flexBasis: "45%" }}>
+                <div>Contact </div>
+                <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>
+                  Let's Work Together!
+                </h1>
+                <div style={{ marginLeft: "25px" }}>
+                  <div style={styles.buttonStyles}>
+                    <a
+                      href="mailto:adammathis.dev@gmail.com"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <TextScrambleComponent
+                        phrases={[
+                          "adammathis.dev@gmail.com",
+                          "001110001111",
+                          "Email Adam",
+                          "Write an email",
+                        ]}
+                        style={{ fontWeight: "bold" }}
+                      />
+                    </a>
+                  </div>
+                  <div style={styles.buttonStyles}>
+                    <a
+                      href="tel:6362846762"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <TextScrambleComponent
+                        phrases={[
+                          "636.284.6762",
+                          "001110001111",
+                          "Adam Mathis",
+                          "Call Adam",
+                        ]}
+                        style={{ fontWeight: "bold" }}
+                      />
+                    </a>
+                  </div>
+                  <button
+                  onClick={() => navigate("/Contact")}
                   style={{
-                    border: "1px solid black",
+                    background: "black",
+                    color: "white",
                     borderRadius: "10px",
-                    width: "80%",
-                    textAlign: "center",
-                    padding: "4px",
+                    height: "50px",
+                    width: "150px",
+                    marginTop: "20px"
                   }}
                 >
-                  <TextScrambleComponent
-                    phrases={["Email Adam!", "001110001111", "email@gmail.com"]}
-                  />
+                  Contact Now
+                </button>
                 </div>
-                <div
-                  style={{
-                    border: "1px solid black",
-                    borderRadius: "10px",
-                    width: "80%",
-                    textAlign: "center",
-                    padding: "4px",
-                    marginTop: "5px",
-                  }}
-                >
-                  <TextScrambleComponent
-                    phrases={["Call Now!", "001110001111", "213-555-8888"]}
-                  />
+                
+              </div>
+
+             
+            </div>
+          </Box>
+          </Grid>
+        </Grid>
+      </Box>
+      
+    );
+  }
+
+  return (
+    <>
+      <div
+        ref={containerRef}
+        id="projects"
+        style={{ overflow: "hidden", height: "100vh" }}
+      >
+        <ScrollingText />
+
+        <div className="pin-process">
+          {data.map((project, index) => (
+            <Box
+              ref={(el) => (sectionsRef.current[index] = el)}
+              className="process-item-wrapper"
+              sx={{ width: { md: "35vw", lg: "25vw", xl: "25vw" } }} // adjusting these also means adjusting the calculateXPerfect function
+              key={project.name}
+            >
+              <ProjectCard project={project} index={index + 1} />
+            </Box>
+          ))}
+
+          {/* Last card not in map, static */}
+          <Box
+            className="process-item-wrapper-last"
+            ref={(el) => (sectionsRef.current[data.length] = el)}
+            sx={{ width: { md: "72vw", lg: "76vw", xl: "76vw" } }} // adjusting these also means adjusting the calculateXPercent function
+          >
+            <div style={{ display: "flex" }}>
+              <div style={{ padding: "25px", flexBasis: "45%" }}>
+                <div>Contact </div>
+                <h1 style={{ fontSize: "clamp(1.5rem, 2.5rem, 4.5rem)" }}>
+                  Let's Work Together!
+                </h1>
+                <div style={{ marginLeft: "25px" }}>
+                  <div style={styles.buttonStyles}>
+                    <a
+                      href="mailto:adammathis.dev@gmail.com"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <TextScrambleComponent
+                        phrases={[
+                          "adammathis.dev@gmail.com",
+                          "001110001111",
+                          "Email Adam",
+                          "Write an email",
+                        ]}
+                        style={{ fontWeight: "bold" }}
+                      />
+                    </a>
+                  </div>
+                  <div style={styles.buttonStyles}>
+                    <a
+                      href="tel:6362846762"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <TextScrambleComponent
+                        phrases={[
+                          "636.284.6762",
+                          "001110001111",
+                          "Adam Mathis",
+                          "Call Adam",
+                        ]}
+                        style={{ fontWeight: "bold" }}
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div style={{ padding: "60px 30px 60px 0px", flexBasis: "60%" }}>
-              {" "}
-              <p>
-                We are always happy to talk. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. Sit consequatur rerum sapiente
-                excepturi deserunt ducimus voluptates deleniti alias nemo
-                doloribus beatae vero harum quas enim
-              </p>
-              <button
-                onClick={() => navigate("/Contact")}
-                style={{
-                  background: "black",
-                  color: "white",
-                  borderRadius: "10px",
-                  height: "50px",
-                  width: "150px",
-                }}
-              >
-                Contact Now
-              </button>
+              <div style={{ padding: "60px 30px 60px 0px", flexBasis: "60%" }}>
+                {" "}
+                <p>
+                  We are always happy to talk. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                  consectetur, adipisicing elit. Sit consequatur rerum sapiente
+                  excepturi deserunt ducimus voluptates deleniti alias nemo
+                  doloribus beatae vero harum quas enim
+                </p>
+                <button
+                  onClick={() => navigate("/Contact")}
+                  style={{
+                    background: "black",
+                    color: "white",
+                    borderRadius: "10px",
+                    height: "50px",
+                    width: "150px",
+                  }}
+                >
+                  Contact Now
+                </button>
+              </div>
             </div>
-          </div>
-        </Box>
+          </Box>
+        </div>
+        <div className="place-holder"></div>
       </div>
-    </div>
+    </>
   );
 };
 
