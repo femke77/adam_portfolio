@@ -51,7 +51,11 @@ ________________________________________________________________________________
 
 
 ## Known Issues 
-The portfolio is not finished.
+- The portfolio is not finished.
+- Not fully responsive in mobile 
+- CSS transitions are using left and right which does not take advantage of the GPU
+- Project cards aren't done, especially more work needed in mobile view
+- The look of the animated skills is bad
 
 
 
